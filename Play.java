@@ -20,17 +20,22 @@ public class Play{
         declareWinner(); // Declare a winner
 		wonLast(); // Determines who won last
     }
-	
-	// Keeps track of points.
-	public static void pointCount(){
-		
-		game.move(); 		// only returns the winner of the duel
-	}
 
     // Choose who goes first.
     public static void chooseFirstPlayer(){
         game.next(); 		// picks the player to go first
     }
+	
+	// Declare winner of duel.
+	public static void duelWinner(){
+		// HER MANGLER VI NOGET TIL AT FINDE UD AF HVEM DER VINDER I EN DYST.
+		game.move(); 		// only returns the winner of the duel
+	}
+	
+	// Keeps track of points.
+	public static void pointCount(){
+	// HER MANGLER VI NOGET TIL AT HOLDE STYR PÅ POINT
+	}
 	
 	// Declare winner.
 	public static void declareWinner(){
