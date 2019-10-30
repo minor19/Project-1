@@ -6,8 +6,10 @@ public class Play{
 	private static Player player2=new Player("Anita");
 	private static Board game=new Board(player1,player2);
 	
+	
 	// Main method.
 	public static void main(String[]args){
+		game.trumpcard();
 		System.out.println("Testing...");
 		System.out.println();
 		
