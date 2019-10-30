@@ -2,7 +2,11 @@ import java.util.Scanner;
 
 public class Play{
 	// First I determine the attributes needed.
-	private static Player player1=new Player("Jayce");
+	public String name1
+	Scanner Keyboard = new Scanner(System.in);
+	System.out.Println("Enter your name player1"); //Hvis man selv skal teste sit navn ind.
+	name1 = keyboard.nextLine();
+	private static Player player1=new Player(name1);
 	private static Player player2=new Player("Anita");
 	private static Board game=new Board(player1,player2);
 	
@@ -10,6 +14,8 @@ public class Play{
 	// Main method.
 	public static void main(String[]args){
 		game.trumpcard();
+		System.out.println("The Trump Card is"+trumpcard)
+			
 		System.out.println("Testing...");
 		System.out.println();
 		
@@ -37,6 +43,7 @@ public class Play{
 	
 	// Keeps track of points.
 	public static void pointCount(){
+		
 	// HER MANGLER VI NOGET TIL AT HOLDE STYR PÅ POINT FRA DUEL
 	}
 	
