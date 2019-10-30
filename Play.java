@@ -7,7 +7,7 @@ public class Play{
 	System.out.Println("Enter your name player1"); //Hvis man selv skal teste sit navn ind.
 	name1 = keyboard.nextLine();
 	private static Player player1=new Player(name1);
-	private static Player player2=new Player("Anita");
+	private static Player player2=new Player("Autoplayer");
 	private static Board game=new Board(player1,player2);
 	
 	
@@ -16,11 +16,14 @@ public class Play{
 		game.trumpcard(); // Shows Trump-card
 		System.out.println("The Trump Card is"+trumpcard)
 		
-		player.hand(); //returns a copy of the cards in the player's hand
+		player1.hand(); //returns a copy of the cards in the player's hand
 		System.out.println(player1+"your hand is" + hand)
-			
+		// Choose who goes first.
+			public static void chooseFirstPlayer(){
+			game.next(); 		// picks the player to go first
+    }	
 		if (card==hand){
-		player.removeFromHand(Card card)
+		player1.removeFromHand(Card card)
 		}
 		
 		System.out.println("Testing...");
@@ -37,10 +40,7 @@ public class Play{
 		wonLast(); // Determines who won last
 	}
 
-    // Choose who goes first.
-    public static void chooseFirstPlayer(){
-        game.next(); 		// picks the player to go first
-    }
+    
 	
 	// Declare winner of duel.
 	public static void duel(){
