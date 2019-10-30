@@ -8,18 +8,19 @@ public class Play{
 	
 	// Main method.
 	public static void main(String[]args){
-		playGame();
-	}
-	
-	// Further methods.
-	public static void playGame(){
 		System.out.println("Testing...");
 		System.out.println();
+		
+		// MÅSKE INDFØR ET INTERFACE MED INTRO TIL SPIL OG FORKLARING AF SPILLET.
+		
+		while(!game.gameOver){
+			// LOOP DUEL
+		}
 		
 		chooseFirstPlayer(); // Choose who goes first
         declareWinner(); // Declare a winner
 		wonLast(); // Determines who won last
-    }
+	}
 
     // Choose who goes first.
     public static void chooseFirstPlayer(){
@@ -27,14 +28,14 @@ public class Play{
     }
 	
 	// Declare winner of duel.
-	public static void duelWinner(){
-		// HER MANGLER VI NOGET TIL AT FINDE UD AF HVEM DER VINDER I EN DYST.
+	public static void duel(){
+		// HER MANGLER VI NOGET TIL AT SIMULERE KORT vs. KORT.
 		game.move(); 		// only returns the winner of the duel
 	}
 	
 	// Keeps track of points.
 	public static void pointCount(){
-	// HER MANGLER VI NOGET TIL AT HOLDE STYR PÅ POINT
+	// HER MANGLER VI NOGET TIL AT HOLDE STYR PÅ POINT FRA DUEL
 	}
 	
 	// Declare winner.
