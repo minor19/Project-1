@@ -13,9 +13,16 @@ public class Play{
 	
 	// Main method.
 	public static void main(String[]args){
-		game.trumpcard();
+		game.trumpcard(); // Shows Trump-card
 		System.out.println("The Trump Card is"+trumpcard)
+		
+		player.hand(); //returns a copy of the cards in the player's hand
+		System.out.println(player1+"your hand is" + hand)
 			
+		if (card==hand){
+		player.removeFromHand(Card card)
+		}
+		
 		System.out.println("Testing...");
 		System.out.println();
 		
@@ -58,3 +65,12 @@ public class Play{
 		game.gameOver();		// checks if the game has ended
 	}
 }
+/* rækkefølge for Class Player methods:
+ * 1. name
+ * 2. hand
+ * 3. removeFromHand
+ * 4. cardsInHand
+ * 5. addToHand
+ * 6. collectedCards
+ * 7. addToCollectedCards
+ */
