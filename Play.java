@@ -73,3 +73,24 @@ public class Play{
  * 6. collectedCards
  * 7. addToCollectedCards
  */
+
+
+import java.util.Scanner;
+
+public class Play{
+	// First I determine the attributes needed.
+	public static String name1;
+	public static String autoplayer;
+
+	// Main method.
+	public static void main(String[]args){
+		System.out.println("Testing...");
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Enter your name player1"); //Hvis man selv skal teste sit navn ind.
+		name1 = keyboard.nextLine();
+		Player player1=new Player(name1);
+		Player player2=new Player(autoplayer);
+		Board game=new Board(player1,player2);
+		
+	}	
+}
