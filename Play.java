@@ -29,7 +29,8 @@ public class Play{
 		System.out.println(" ");		
 		System.out.println("To win the game:");
 		System.out.println("1. When there are no more cards in the deck, the players continue until they run out of cards in their hands.");
-		System.out.println("2. The scores are determined by the card value of; Ace, Seven, King, Jack and Queen. whose values are: 11, 10, 4, 3 and 2 respectively.");
+		System.out.println("2. The scores are determined by the cards of value in their collected deck of cards they've won.");
+		System.out.println("3. The cards of value are as follows; Ace, Seven, King, Jack and Queen. whose values are: 11, 10, 4, 3 and 2 respectively.");
 		
 		System.out.println(" ");
 		System.out.println("The Trump Card of this round is "+game.trumpCard());
