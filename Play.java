@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Arrays;
 
 public class Play{
 	// First I determine the attributes needed.
@@ -16,7 +17,7 @@ public class Play{
 		Player player1=new Player(name1);
 		Player player2=new Player(autoplayer);
 		Board game=new Board(player1,player2);
-		
+
 		System.out.println(" ");
 		System.out.println("The rules are the following:");
 		System.out.println("1. At the start of the game each player starts with 3 cards.");
@@ -36,9 +37,10 @@ public class Play{
 		System.out.println("The Trump Card of this round is "+game.trumpCard());
 		
 		System.out.println(" ");
-		System.out.println("The cards in your hand are" + player1.hand());
+		System.out.println(player1.cardsInHand());		//Number of cards in hand
+		System.out.println(Arrays.toString(player1.hand()));	//Specific cards in hand
 	}	
-}	
+}
 	
 	
 -----------------------------------------------------------------------------------------------------------------------------------
