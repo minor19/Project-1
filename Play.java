@@ -2,8 +2,13 @@ import java.util.Scanner;
 
 public class Play{
 	// First I determine the attributes needed.
-	private static Player player1=new Player("Jayce");
-	private static Player player2=new Player("Anita");
+	public String name1;
+	public String autoplayer;
+	Scanner Keyboard = new Scanner(System.in);
+	System.out.Println("Enter your name player1"); //Hvis man selv skal teste sit navn ind.
+	name1 = keyboard.nextLine();
+	private static Player player1=new Player(name1);
+	private static Player player2=new Player(autoplayer);
 	private static Board game=new Board(player1,player2);
 	
 	// Main method.
