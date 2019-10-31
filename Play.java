@@ -13,6 +13,15 @@ public class Play{
 	
 	// Main method.
 	public static void main(String[]args){
+		game.trumpcard(); // Shows Trump-card
+		System.out.println("The Trump Card is"+trumpcard)
+		
+		player1.hand(); //returns a copy of the cards in the player's hand
+		System.out.println(player1+"your hand is" + hand)
+		// Choose who goes first.
+			public static void chooseFirstPlayer(){
+			game.next(); 		// picks the player to go first
+    }
 		System.out.println("Testing...");
 		System.out.println();
 		
