@@ -36,7 +36,7 @@ public class Play{
 		System.out.println("The Trump Card of this round is "+game.trumpCard());
 		
 		System.out.println(" ");
-		System.out.println(player1.hand());
+		System.out.println("The cards in your hand are" + player1.hand());
 	}	
 }	
 	
