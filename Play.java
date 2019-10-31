@@ -19,7 +19,7 @@ public class Play{
 		Board game=new Board(player1,player2);
 
 		System.out.println(" ");
-		System.out.println("The rules are the following:");
+		System.out.println("The rules of the game are as follows:");
 		System.out.println("1. At the start of the game each player starts with 3 cards.");
 		System.out.println("2. The winner of the previous round begins the current round (with the exception of the first round where it is decided between the players).");
 		System.out.println("3. Then a Trump Suit will be decided.");
@@ -33,15 +33,48 @@ public class Play{
 		System.out.println("2. The scores are determined by the cards of value in their collected deck of cards they've won.");
 		System.out.println("3. The cards of value are as follows; Ace, Seven, King, Jack and Queen. whose values are: 11, 10, 4, 3 and 2 respectively.");
 		
-		System.out.println(" ");
-		System.out.println("The Trump Card of this round is "+game.trumpCard());
 		
 		System.out.println(" ");
-		System.out.println(player1.cardsInHand());		//Number of cards in hand
-		System.out.println(Arrays.toString(player1.hand()));	//Specific cards in hand
+		System.out.println("Would you like to go first? (yes/no)");
+		String decision;
+		decision=keyboard.nextLine();
+		boolean yesNo;
+		switch(decision){
+        case "yes":
+            yesNo = false;
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			System.out.println("The Trump Card of this round is "+game.trumpCard());
+			System.out.println("What card would you like to play?");
+			System.out.println(player1.removeFromHand());
+			// ACTION
+			
+            break;
+        case "no": 
+            yesNo = true;
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			System.out.println("The Trump Card of this round is "+game.trumpCard());
+			// ACTION
+			
+            break;
+        default: 
+            System.out.println("please enter again ");
+		}
+		
+		/*
+		* The repeating rounds after the first round is playing.
+		*/
+		boolean playing=true;
+		while(playing){
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			break;
+			
+			
+		}
 	}	
 }
-	
 	
 -----------------------------------------------------------------------------------------------------------------------------------
     // Choose who goes first.
