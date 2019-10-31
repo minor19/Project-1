@@ -55,3 +55,12 @@ public class Play{
 		game.gameOver();		// checks if the game has ended
 	}
 }
+/* rækkefølge for Class Player methods:
+ * 1. name
+ * 2. hand
+ * 3. removeFromHand
+ * 4. cardsInHand
+ * 5. addToHand
+ * 6. collectedCards
+ * 7. addToCollectedCards
+ */
