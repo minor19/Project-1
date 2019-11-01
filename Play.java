@@ -22,7 +22,7 @@ public class Play{
 			System.out.println("");
 			Player currentPlayer=board.next();
 			if(currentPlayer.equals(player)){
-				System.out.println("Det er "+name1+"'s tur.");
+				System.out.println("Det er spillerens tur.");
 			
 				/*
 				* Tjekker hvem der vinder runden alt efter hvad spillerne har spillet.
@@ -52,44 +52,42 @@ public class Play{
 		
 				System.out.println(winner.name() + " er vinderen af runden.");
 			}
-
-			// Beregner og finder den endelige score for spilleren og modstanderen.
-			int playerScore = finalScore(player.collectedCards());
-			int autoPlayerScore = finalScore(autoPlayer.collectedCards());
-		
-			System.out.println(player.name() + " har " + playerScore + " point, og " +
-				autoPlayer.name() + " har " + autoPlayerScore + " point");
-			
-			// Udregner og printer vinderen eller om det er uafgjort.
-			if(playerScore > autoPlayerScore)
-				System.out.println(player.name()+" vandt!!");
-			else if(playerScore==autoPlayerScore)
-				System.out.println("Et sjællendt tilfælde, men det blev uafgjort.");
-			else
-				System.out.println(autoPlayer.name()+" vandt!!");
 		}
-	}
+
+		// Beregner og finder den endelige score for spilleren og modstanderen.
+		int playerScore = finalScore(player.collectedCards());
+		int autoPlayerScore = finalScore(autoPlayer.collectedCards());
+	
+		System.out.println(player.name()+" har "+playerScore+" point, og "+
+			autoPlayer.name()+" har "+autoPlayerScore +"point");
 		
-		
+		// Udregner og printer vinderen eller om det er uafgjort.
+		if(playerScore > autoPlayerScore)
+			System.out.println(player.name()+" vandt!!");
+		else if(playerScore==autoPlayerScore)
+			System.out.println("Et sjællendt tilfælde, men det blev uafgjort.");
+		else
+			System.out.println(autoPlayer.name()+" vandt!!");
+		}
+				
 	/*
 	* Initialiserer spillet samt tager input til spillernavn og informere spilleren om regleren i spillet.
 	*/
 	public static void init(){
 		// introduktion.
+		// bestemmer spillernavnet.
 		System.out.println("Et kortspil af Christian, Mikkel og Rasmus.");
+		System.out.println("Først og fremmest, hvad er dit navn?");
+		scanner=new Scanner(System.in);
+		String name=scanner.nextLine();
 		
 		// sætter spillet op.
-		player=new Player("name1");
-		autoPlayer=new AutoPlayer("Modstander");
+		player=new Player(name);
+		autoPlayer=new AutoPlayer("Modstanderen");
 		board=new Board(player, autoPlayer);
-		
-		// bestemmer spillernavnet.
-		scanner=new Scanner(System.in);
-		System.out.println("Først og fremmest, hvad er dit navn?:");
-		String name1=scanner.nextLine();
-		
+
 		// fortæller reglerne.
-		System.out.println("Okay, "+name1+", reglerne er simple: ");
+		System.out.println("Okay, "+name+", reglerne er simple: ");
 		System.out.println("1. I starten af spillet vil hver spiller få 3 kort");
 		System.out.println("2. Vinderen af den tidligere runde begynder");
 		System.out.println("3. En trumf-type vil derefter blive valgt gennem et kort(f.eks Hjerte konge, trumf-type=Hjerte)");
@@ -105,19 +103,21 @@ public class Play{
 	}
 	
 	/*
-	* 
+	* Lader spilleren beslutte sig for hvilket kort han/hun vil spille.
 	*/
 	public static Card playerChoiceOfCard(){
 		// Spilleren vises hans/hendes hånd.
 		System.out.println("De nuværende kort du har på hånden er: ");
 		System.out.println(Arrays.toString(player.hand()));
 		System.out.println("Vælg et kort du vil spille, ved brug af 1-3");
+		Card[] hand=player.hand();
 		
 		// Lader spilleren vælge et kort fra hånden, mellem 1 og antal kort på hånden.
-		pickedCard=scanner.nextInt() - 1;
+		int pickedCard=0;
+		pickedCard=scanner.nextInt()-1;
 		if(pickedCard < 0 || pickedCard >= hand.length)
-			System.out.println("Ugyldig værdi, vælg et tal mellem 1 og " +hand.length);
-		return hand(pickedCard);
+			System.out.println("Ugyldig værdi, vælg et tal mellem 1 og "+hand.length);
+		return hand[pickedCard];
 	}
 	
 	/* 
