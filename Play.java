@@ -58,16 +58,16 @@ public class Play{
 		int playerScore = finalScore(player.collectedCards());
 		int autoPlayerScore = finalScore(autoPlayer.collectedCards());
 	
-		System.out.println(player.name()+" har "+playerScore+" point, og "+
-			autoPlayer.name()+" har "+autoPlayerScore +"point");
+		System.out.println(player.name()+" endte med "+playerScore+" point, og "+
+			autoPlayer.name()+" endte med "+autoPlayerScore +"point");
 		
 		// Udregner og printer vinderen eller om det er uafgjort.
 		if(playerScore > autoPlayerScore)
-			System.out.println(player.name()+" vandt!!");
+			System.out.println(player.name()+" er vinderen af spillet");
 		else if(playerScore==autoPlayerScore)
 			System.out.println("Et sjællendt tilfælde, men det blev uafgjort.");
 		else
-			System.out.println(autoPlayer.name()+" vandt!!");
+			System.out.println(autoPlayer.name()+" er vinderen af spillet");
 		}
 				
 	/*
