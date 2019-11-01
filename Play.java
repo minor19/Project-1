@@ -11,7 +11,7 @@ public class Play{
 		System.out.println("A Card Game by Christian, Mikkel and Rasmus");
 		
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Please enter your name below:"); //Hvis man selv skal teste sit navn ind.
+		System.out.println("Please enter your name below:");
 		name1 = keyboard.nextLine();
 		
 		Player player1=new Player(name1);
