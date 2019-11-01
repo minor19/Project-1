@@ -9,8 +9,8 @@
 				game.move(card1, card2);
 				System.out.println("The winner of this round is "+game.next());
 				while (game.next()=name1){
-				player.addTooCollectedCards(card1, card2)
-			}
+					player.addTooCollectedCards(card1, card2)
+				}
 				player.addToHand(card);
 				game.next();
 			else
@@ -20,8 +20,8 @@
 				game.move(card1, card2);
 				System.out.println("The winner of this round is "+game.next());
 				while (game.next()=name1){
-				player.addTooCollectedCards(card1, card2)
-			}
+					player.addTooCollectedCards(card1, card2)
+				}
 				player.addToHand(card);
 				game.next();
 			
