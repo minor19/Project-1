@@ -9,9 +9,10 @@ public class Play{
 	public static AutoPlayer autoPlayer;
 	
 	/* 
-	 * Main metoden, hvor spillet bliver sat op før første runde.
+	 * Main metoden, hvor spillet bliver sat selve spillet kører.
 	 */
 	public static void main(String[] args){
+		//Initialisationen
 		init();
 		
 		// Trumf-kortet bliver vist for spilleren.
@@ -24,9 +25,7 @@ public class Play{
 			if(currentPlayer.equals(player)){
 				System.out.println("Det er spillerens tur.");
 			
-				/*
-				* Tjekker hvem der vinder runden alt efter hvad spillerne har spillet.
-				*/
+				// Tjekker hvem der vinder runden alt efter hvad spillerne har spillet.
 				Card playerMove = playerChoiceOfCard();
 				Card autoPlayerMove = autoPlayer.next(playerMove);
 				System.out.println(autoPlayer.name() + " spillede: " +
@@ -39,7 +38,7 @@ public class Play{
 			}
 			else{
 				System.out.println("Det er " + autoPlayer.name() + "s tur.");
-				// Autoplayer vælger hvilket kort den vil spille.
+				// Autoplayeren vælger hvilket kort den vil spille.
 				Card autoPlayerMove = autoPlayer.next();
 		
 				System.out.println(autoPlayer.name() + " spillede: " +
@@ -97,13 +96,13 @@ public class Play{
 		
 		System.out.println(" ");
 		System.out.println("For at vinde gælder følgende");
-		System.out.println("1. Når der ikke er flere kort tilbage i kortdækket, så fortsætter spillerne, indtil at de ikke har flere kort tilbage");
+		System.out.println("1. Når der ikke er flere kort tilbage i kortdækket, så fortsætter spillerne, indtil at de ikke har flere kort tilbage i hånden");
 		System.out.println("2. Spillernes score er bestemt udfra kortenes værdi i deres bunke med vundne kort");
 		System.out.println("3. Kortenes værdi er som følgende: Es, Syver, Konge, Knægt og Dronning. Deres værdier er henholdsvis: 11, 10, 4, 3 and 2.");
 	}
 	
 	/*
-	* Lader spilleren beslutte sig for hvilket kort han/hun vil spille.
+	* Lader spilleren beslutte sig for hvilket kort han/hun vil spille ud fra hvilke kort der er i hånden.
 	*/
 	public static Card playerChoiceOfCard(){
 		// Spilleren vises hans/hendes hånd.
@@ -121,7 +120,7 @@ public class Play{
 	}
 	
 	/* 
-	 * Finder den endelige score for spilleren og returnerer den nuværende score.
+	 * Finder og returnerer scoren for spillerne.
 	 */
 	private static int finalScore(Card[] cards){
 		int currentScore=0;
