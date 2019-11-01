@@ -97,11 +97,11 @@ public class Play{
 	// Declare winner.
 	public static void declareWinner(){
 		if(player1.pointCount>60)
-			System.out.print("Congratz on winning Jayce, with "+pointCount+" points.");
+			System.out.print("Congratz on winning "+name1+", with "+pointCount+" points.");
 		else if(player1.pointCount==60)
 			System.out.print("Well, this is rare, it's a tie.");
 		else
-			System.out.print("Better luck next time, Jayce, you just needed "+(61-pointCount)+" points more.");
+			System.out.print("Better luck next time, "+name1+", you just needed "+(61-pointCount)+" points more.");
 		game.gameOver();		// checks if the game has ended
 	}
 }
