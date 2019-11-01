@@ -1,5 +1,3 @@
-
-		
 		System.out.println(" ");
 		System.out.println("Would you like to go first? (yes/no)");
 		String decision;
@@ -17,6 +15,9 @@
 			autoPlayer.next(card1);
 			game.move(card1, card2);
 			System.out.println("The winner of this round is "+game.next());
+			while (game.next()=name1){
+				player.addTooCollectedCards(card1, card2)
+			}
 			player.addToHand(card);
 			game.next();
 			// ACTION
@@ -33,6 +34,9 @@
 			player.removeFromHand(card2);
 			game.move(card1, card2);
 			System.out.println("The winner of this round is "+game.next());
+			while (game.next()=name1){
+				player.addTooCollectedCards(card1, card2)
+			}
 			player.addToHand(card);
 			game.next();
 			// ACTION
@@ -49,12 +53,9 @@
 			autoPlayer.next(card1);
 			game.move(card1, card2);
 			System.out.println("The winner of this round is "+game.next());
+			while (game.next()=name1){
+				player.addTooCollectedCards(card1, card2)
+			}
 			player.addToHand(card);
 			game.next();
 			break;
-			
-		}
-			
-	
-	}	
-}
