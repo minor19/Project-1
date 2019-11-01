@@ -1,0 +1,27 @@
+	
+		boolean playing = true;
+		while (playing){
+			System.out.println("it is "+game.next()"'s turn")
+			if (game.next()=opponent)
+				autoPlayer.next();
+				card2=keyboard.nextLine();
+				player.removeFromHand(card2);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+				player.addTooCollectedCards(card1, card2)
+			}
+				player.addToHand(card);
+				game.next();
+			else
+				card1=keyboard.nextLine();
+				player.removeFromHand(card1);	
+				autoPlayer.next(card1);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+				player.addTooCollectedCards(card1, card2)
+			}
+				player.addToHand(card);
+				game.next();
+			
