@@ -1,0 +1,60 @@
+
+		
+		System.out.println(" ");
+		System.out.println("Would you like to go first? (yes/no)");
+		String decision;
+		decision=keyboard.nextLine();
+		boolean yesNo;
+		switch(decision){
+        case "yes":
+            yesNo = false;
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			System.out.println("The Trump Card of this round is "+game.trumpCard());
+			System.out.println("What card would you like to play?");
+			card1=keyboard.nextLine();
+			player.removeFromHand(card1);	
+			autoPlayer.next(card1);
+			game.move(card1, card2);
+			System.out.println("The winner of this round is "+game.next());
+			player.addToHand(card);
+			game.next();
+			// ACTION
+			
+            break;
+        case "no": 
+            yesNo = true;
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			System.out.println("The Trump Card of this round is "+game.trumpCard());
+			System.out.println("Your opponent will start then");
+			autoPlayer.next();
+			card2=keyboard.nextLine();
+			player.removeFromHand(card2);
+			game.move(card1, card2);
+			System.out.println("The winner of this round is "+game.next());
+			player.addToHand(card);
+			game.next();
+			// ACTION
+			
+            break;
+        default: 
+            System.out.println("We take that as yes ");
+			System.out.println("The current cards in your hand: ");
+			System.out.println(Arrays.toString(player1.hand()));
+			System.out.println("The Trump Card of this round is "+game.trumpCard());
+			System.out.println("What card would you like to play?");
+			card1=keyboard.nextLine();
+			player.removeFromHand(card1);	
+			autoPlayer.next(card1);
+			game.move(card1, card2);
+			System.out.println("The winner of this round is "+game.next());
+			player.addToHand(card);
+			game.next();
+			break;
+			
+		}
+			
+	
+	}	
+}
