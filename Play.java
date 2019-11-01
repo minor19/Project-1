@@ -1,10 +1,14 @@
 import java.util.Scanner;
 import java.util.Arrays;
 
+/*
+* 
+*/
 public class Play{
 	// First I determine the attributes needed.
 	public static String name1;
 	public static String autoplayer;
+	public static String removeFromHand;
 
 	// Main method.
 	public static void main(String[]args){
@@ -15,7 +19,7 @@ public class Play{
 		name1 = keyboard.nextLine();
 		
 		Player player1=new Player(name1);
-		Player player2=new Player(autoplayer);
+		Player opponent=new Player(autoplayer);
 		Board game=new Board(player1,player2);
 
 		System.out.println(" ");
@@ -40,98 +44,104 @@ public class Play{
 		decision=keyboard.nextLine();
 		boolean yesNo;
 		switch(decision){
-        case "yes":
-            yesNo = false;
-			System.out.println("The current cards in your hand: ");
-			System.out.println(Arrays.toString(player1.hand()));
-			System.out.println("The Trump Card of this round is "+game.trumpCard());
-			System.out.println("What card would you like to play?");
-			System.out.println(player1.removeFromHand());
-			// ACTION
-			
-            break;
-        case "no": 
-            yesNo = true;
-			System.out.println("The current cards in your hand: ");
-			System.out.println(Arrays.toString(player1.hand()));
-			System.out.println("The Trump Card of this round is "+game.trumpCard());
-			// ACTION
-			
-            break;
-        default: 
-            System.out.println("please enter again ");
+			case "yes":
+				yesNo = false;
+				System.out.println("The current cards in your hand: ");
+				System.out.println(Arrays.toString(player1.hand()));
+				System.out.println("The Trump Card of this round is "+game.trumpCard());
+				System.out.println("What card would you like to play?");
+				card1=keyboard.nextLine();
+				player.removeFromHand(card1);	
+				autoPlayer.next(card1);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+					player.addToCollectedCards(card1, card2)
+				}
+				player.addToHand(card);
+				game.next();
+				// ACTION
+				break;
+			case "no": 
+				yesNo = true;
+				System.out.println("The current cards in your hand: ");
+				System.out.println(Arrays.toString(player1.hand()));
+				System.out.println("The Trump Card of this round is "+game.trumpCard());
+				System.out.println("Your opponent will start then");
+				autoPlayer.next();
+				card2=keyboard.nextLine();
+				player.removeFromHand(card2);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+					player.addToCollectedCards(card1, card2)
+				}
+				player.addToHand(card);
+				game.next();
+				// ACTION
+				break;
+			default: 
+				System.out.println("We take that as yes ");
+				System.out.println("The current cards in your hand: ");
+				System.out.println(Arrays.toString(player1.hand()));
+				System.out.println("The Trump Card of this round is "+game.trumpCard());
+				System.out.println("What card would you like to play?");
+				card1=keyboard.nextLine();
+				player.removeFromHand(card1);	
+				autoPlayer.next(card1);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+					player.addToCollectedCards(card1, card2)
+				}
+				player.addToHand(card);
+				game.next();
+				break;
 		}
 		
 		/*
 		* The repeating rounds after the first round is playing.
 		*/
-		boolean playing=true;
-		while(playing){
-			System.out.println("The current cards in your hand: ");
-			System.out.println(Arrays.toString(player1.hand()));
-			break;
-			
-			
+		boolean game.gameOver = false;
+		while (!game.gameOver()){
+			System.out.println("it is "+game.next()"'s turn")
+			if(game.next()=opponent)
+				autoPlayer.next();
+				card2=keyboard.nextLine();
+				player.removeFromHand(card2);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+					player.addToCollectedCards(card1, card2)
+				}
+				player.addToHand(card);
+				game.next();
+			else if (game.next()=name1)
+				card1=keyboard.nextLine();
+				player.removeFromHand(card1);	
+				autoPlayer.next(card1);
+				game.move(card1, card2);
+				System.out.println("The winner of this round is "+game.next());
+				while (game.next()=name1){
+					player.addToCollectedCards(card1, card2)
+				}
+				player.addToHand(card);
+				game.next();
+			else
+				game.gameOver()=true;
 		}
-	}	
-}
-	
------------------------------------------------------------------------------------------------------------------------------------
-    // Choose who goes first.
-    public static void chooseFirstPlayer(){
-        game.next(); 		// picks the player to go first
-    }
-	
-	// Declare winner of duel.
-	public static void duel(){
-		// HER MANGLER VI NOGET TIL AT SIMULERE KORT vs. KORT.
-		game.move(card1,card2); 		// only returns the winner of the duel
-		
 	}
-	
-	// Keeps track of points.
-	public static void pointCount(){
-		// HER MANGLER VI NOGET TIL AT HOLDE STYR PÅ POINT FRA DUEL
-	}
-	
-	// Declare winner.
+
+	/*
+	* Declares winner by counting the final amount of points of the player.
+	*/ 
 	public static void declareWinner(){
-		if(player1.pointCount>60)
-			System.out.print("Congratz on winning "+name1+", with "+pointCount+" points.");
-		else if(player1.pointCount==60)
-			System.out.print("Well, this is rare, it's a tie.");
+		int totalPoints=card.points(player1.collectedCards());
+		if(totalPoints>60)
+			System.out.print("Congratz on winning "+name1+", with "+totalPoints+" points.");
+		else if(totalPoints==60)
+			System.out.print("Well, this is rare, it's a tie!");
 		else
-			System.out.print("Better luck next time, "+name1+", you just needed "+(61-pointCount)+" points more.");
-		game.gameOver();		// checks if the game has ended
-	}
-}
-/* rækkefølge for Class Player methods:
- * 1. name
- * 2. hand
- * 3. removeFromHand
- * 4. cardsInHand
- * 5. addToHand
- * 6. collectedCards
- * 7. addToCollectedCards
- */
-
-
-import java.util.Scanner;
-
-public class Play{
-	// First I determine the attributes needed.
-	public static String name1;
-	public static String autoplayer;
-
-	// Main method.
-	public static void main(String[]args){
-		System.out.println("Testing...");
-		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Enter your name player1"); //Hvis man selv skal teste sit navn ind.
-		name1 = keyboard.nextLine();
-		Player player1=new Player(name1);
-		Player player2=new Player(autoplayer);
-		Board game=new Board(player1,player2);
-		
-	}	
+			System.out.print("Better luck next time, "+name1+", you just needed "+(61-totalPoints)+" points more.");
+		System.out.println("GAME OVER");
 }
