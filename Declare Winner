@@ -1,0 +1,13 @@
+	/*
+	* Declares winner by counting the final amount of points of the player.
+	*/ 
+	public static void declareWinner(){
+		int totalPoints=game.points(player1.collectedCards());
+		if(totalPoints>60)
+			System.out.print("Congratz on winning "+name1+", with "+totalPoints+" points.");
+		else if(totalPoints==60)
+			System.out.print("Well, this is rare, it's a tie!");
+		else
+			System.out.print("Better luck next time, "+name1+", you just needed "+(61-totalPoints)+" points more.");
+		System.out.println("GAME OVER");
+}
