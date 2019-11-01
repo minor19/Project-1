@@ -79,14 +79,14 @@ public class Play{
 		System.out.println("Et kortspil af Christian, Mikkel og Rasmus.");
 		
 		// sætter spillet op.
-		player=new Player(name1);
+		player=new Player("name1");
 		autoPlayer=new AutoPlayer("Modstander");
 		board=new Board(player, autoPlayer);
 		
 		// bestemmer spillernavnet.
 		scanner=new Scanner(System.in);
 		System.out.println("Først og fremmest, hvad er dit navn?:");
-		name1=keyboard.nextLine();
+		String name1=scanner.nextLine();
 		
 		// fortæller reglerne.
 		System.out.println("Okay, "+name1+", reglerne er simple: ");
