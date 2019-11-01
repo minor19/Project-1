@@ -36,8 +36,23 @@ public class Play{
 		System.out.println("1. When there are no more cards in the deck, the players continue until they run out of cards in their hands.");
 		System.out.println("2. The scores are determined by the cards of value in their collected deck of cards they've won.");
 		System.out.println("3. The cards of value are as follows; Ace, Seven, King, Jack and Queen. whose values are: 11, 10, 4, 3 and 2 respectively.");
+		//oversættelse til dansk.
+		System.out.println(" ");
+		System.out.println("Reglerne for spillet er som følgende:");
+		System.out.println("1. I starten af spillet vil hver spiller få 3 kort");
+		System.out.println("2. Vinderen af den tidligere runde begynder");
+		System.out.println("3. En trumf-type vil derefter blive valgt gennem et kort(f.eks Hjerte konge, trumf-type=Hjerte)");
+		System.out.println("4. Hvis spiller 2 bruger et kort, som har højere værdi og samme type som spiller 1's kort, så vinder spiller 2 runden");
+		System.out.println("5. Hvis spiller 2 bruger et kort af trumf-typen, og første spiller ikke gjorde, så vinder spiller 2 runden");
+		System.out.println("6. I alle andre tilfælde, så vil spiller 1 vinde runden");
 		
-		
+		System.out.println(" ");		
+		System.out.println("For at vinde gælder følgende);
+		System.out.println("1. Når der ikke er flere kort tilbage i kortdækket, så fortsætter spillerne, indtil at de ikke har flere kort tilbage");
+		System.out.println("2. Spillernes score er bestemt udfra kortenes værdi i deres bunke med vundne kort");
+		System.out.println("3. Kortenes værdi er som følgende: Es, Syver, Konge, Knægt og Dronning. Deres værdier er henholdsvis: 11, 10, 4, 3 and 2.");
+			
+			
 		System.out.println(" ");
 		System.out.println("Would you like to go first? (yes/no)");
 		String decision;
